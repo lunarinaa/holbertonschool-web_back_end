@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Task 1"""
+"""Task 2"""
 import csv
 import math
 from typing import List
@@ -34,3 +34,18 @@ class Server:
             return self.__dataset[start_index:end_index]
         else:
             return []
+
+    def get_hyper(self, page=1, page_size=10):
+        """returning formatted dictionary"""
+        page_get = self.get_page(page, page_size)
+        data = len(self.dataset())
+        pages = int(round(data / page_size))
+
+        return {
+            'page_size': len(page_get),
+            'page': page,
+            'data': page_get,
+            'next_page': page + 1 if page < pages else None,
+            'prev_page': page - 1 if page != 1 else None,
+            'total_pages': pages
+        }
