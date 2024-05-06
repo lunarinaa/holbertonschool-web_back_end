@@ -39,7 +39,7 @@ class Server:
         """returning formatted dictionary"""
         page_get = self.get_page(page, page_size)
         data = len(self.dataset())
-        pages = int(round(data / page_size))
+        pages = math.ceil(data / page_size)
 
         return {
             'page_size': len(page_get),
