@@ -25,7 +25,7 @@ class Server:
 
         return self.__dataset
 
-    def get_page(self, page=1, page_size=10):
+    def get_page(self, page: int = 1, page_size: int = 10) -> List[List]:
         """getting page"""
         assert isinstance(page, int) and isinstance(page_size, int)
         assert page > 0 and page_size > 0
@@ -35,7 +35,7 @@ class Server:
         else:
             return []
 
-    def get_hyper(self, page=1, page_size=10):
+    def get_hyper(self, page: int = 1, page_size: int = 10) -> List[List]:
         """returning formatted dictionary"""
         page_get = self.get_page(page, page_size)
         data = len(self.dataset())
