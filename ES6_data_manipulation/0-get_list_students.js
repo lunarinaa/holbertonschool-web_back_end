@@ -1,4 +1,4 @@
-/* eslint -disable */
+/* eslint-disable */
 export default function getListStudents () {
   const object1 = {
     id: 1,
